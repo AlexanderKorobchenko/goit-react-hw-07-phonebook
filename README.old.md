@@ -38,4 +38,5 @@ Redux:
 
 - npm i redux
 - npm install react-redux
+- npm i @reduxjs/toolkit
 - npm i redux-devtools-extension

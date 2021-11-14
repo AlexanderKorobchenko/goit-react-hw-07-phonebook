@@ -1,10 +1,11 @@
-import './App.css';
+import Container from './Components/Container';
+import Phonebook from './views/phonebook';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">hello world</header>
-    </div>
+    <Container>
+      <Phonebook />
+    </Container>
   );
 }
 
