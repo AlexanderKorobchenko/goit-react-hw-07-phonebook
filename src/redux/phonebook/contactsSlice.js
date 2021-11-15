@@ -26,10 +26,6 @@ export const contactsApi = createApi({
       }),
       invalidatesTags: ['Contacts'],
     }),
-    // findContacts: builder.query({
-    //   query: value => `/contacts?search=${value}`,
-    //   providesTags: ['Contacts'],
-    // }),
   }),
 });
 

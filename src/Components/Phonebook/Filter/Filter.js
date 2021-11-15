@@ -1,17 +1,16 @@
 import PropTypes from 'prop-types';
 import s from './Filter.module.css';
-// import { useFindContactsQuery } from '../../../redux/phonebook/contactsSlice';
 
 const Filter = ({ filter, onChangeFilter }) => {
   return (
     <label className={s.label}>
-      Find contacts
+      Search
       <input
         className={s.input}
         type="text"
         name="filter"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Введите имя контакта. Поиск не чувствительный к регистру вводимых символов."
+        title="Enter the contact's name. Search is not case sensitive to the entered characters."
         required
         onChange={onChangeFilter}
         value={filter}

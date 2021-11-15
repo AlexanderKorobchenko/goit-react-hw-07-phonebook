@@ -1,7 +1,7 @@
 .form {
-  width: 240px;
+  width: 93%;
   padding: 20px 10px;
-  border: 1px solid #404040;
+  border: 1px solid #ccc;
 
   display: flex;
   flex-direction: column;
@@ -9,13 +9,16 @@
 
 .label {
   margin-bottom: 16px;
-  color: #404040;
+  color: #ccc;
 }
 
 .input {
-  margin-left: 20px;
+  width: 74%;
+  margin-left: 26px;
   outline: none;
-  border: 1px solid #404040;
+  color: #ccc;
+  background-color: transparent;
+  border: 1px solid #ccc;
 }
 
 .input:hover,
@@ -24,18 +27,23 @@
 }
 
 .input_number {
-  margin-left: 4px;
+  width: 74%;
+  margin-left: 10px;
   outline: none;
-  border: 1px solid #404040;
+  color: #ccc;
+  background-color: transparent;
+  border: 1px solid #ccc;
 }
 .input_number:hover,
 .input_number:focus {
   border: 1px solid limegreen;
 }
 .button {
+  width: 97%;
   padding: 2px 6px;
-  color: #404040;
-  border: 1px solid #404040;
+  color: #ccc;
+  background-color: transparent;
+  border: 1px solid #ccc;
   cursor: pointer;
   outline: none;
   font-size: 14px;

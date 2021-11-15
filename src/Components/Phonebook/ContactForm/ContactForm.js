@@ -2,7 +2,7 @@ import { useState } from 'react';
 import s from './ContactForm.module.css';
 import { useAddNewContactMutation } from '../../../redux/phonebook/contactsSlice';
 
-function ContactForm() {
+function ContactForm({ contacts }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [addNewContact] = useAddNewContactMutation();
@@ -26,6 +26,14 @@ function ContactForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
+
+    if (contacts) {
+      if (contacts.some(contact => contact.name.includes(name))) {
+        alert(`${name} is already in contacts!`);
+        resetForm();
+        return;
+      }
+    }
 
     const contact = {
       name: name,
@@ -51,7 +59,7 @@ function ContactForm() {
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+          title="The name can only consist of letters, apostrophes, dashes and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan..."
           required
           onChange={handleChange}
           value={name}
@@ -64,7 +72,7 @@ function ContactForm() {
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           onChange={handleChange}
           value={number}
